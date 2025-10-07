@@ -6,6 +6,229 @@
     <title>viciados em minisseries</title>
 </head>
 <body>
-    
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combo de Filmes - Só R$30</title>
+  <style>
+    /* ======== ESTILO GERAL ======== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      color: #e50914;
+      font-size: 28px;
+      letter-spacing: 1px;
+    }
+
+    header a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      background: #e50914;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    header a:hover {
+      background: #b00610;
+    }
+
+    /* ======== SEÇÃO HERO ======== */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0,0,0,0.6)),
+        url('https://image.tmdb.org/t/p/original/2lUYbD2C3XSuwqMUbDVDQuz9mqz.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-content {
+      max-width: 600px;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: #b3b3b3;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .hero button {
+      background: #e50914;
+      color: #fff;
+      border: none;
+      padding: 15px 40px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .hero button:hover {
+      background: #b00610;
+    }
+
+    /* ======== SEÇÃO FILMES ======== */
+    .filmes {
+      padding: 100px 50px;
+      background-color: #111;
+      text-align: center;
+    }
+
+    .filmes h3 {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+
+    .filme {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .filme img {
+      width: 100%;
+      height: 270px;
+      object-fit: cover;
+    }
+
+    .filme:hover {
+      transform: scale(1.05);
+    }
+
+    /* ======== SEÇÃO COMPRA ======== */
+    .compra {
+      background-color: #000;
+      text-align: center;
+      padding: 100px 50px;
+    }
+
+    .compra h3 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .compra p {
+      color: #b3b3b3;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .compra button {
+      background: #e50914;
+      border: none;
+      color: #fff;
+      padding: 15px 40px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .compra button:hover {
+      background: #b00610;
+    }
+
+    footer {
+      background: #111;
+      color: #b3b3b3;
+      text-align: center;
+      padding: 30px 0;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 36px;
+      }
+      .hero p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>MovieCombo</h1>
+    <a href="#compra">Comprar Agora</a>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Assista os Melhores Filmes por Apenas R$30</h2>
+      <p>Um combo exclusivo com os maiores sucessos do cinema, direto na sua tela. Acesse agora e aproveite!</p>
+      <button onclick="document.getElementById('compra').scrollIntoView({behavior: 'smooth'})">Ver Ofertas</button>
+    </div>
+  </section>
+
+  <section class="filmes" id="filmes">
+    <h3>Filmes Incluídos no Combo</h3>
+    <div class="grid">
+      <div class="filme"><img src="https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg" alt="O Poderoso Chefão"></div>
+      <div class="filme"><img src="https://image.tmdb.org/t/p/w500/6ELJEzQJ3Y45HczvreC3dg0GV5R.jpg" alt="Pantera Negra"></div>
+      <div class="filme"><img src="https://image.tmdb.org/t/p/w500/q719jXXEzOoYaps6babgKnONONX.jpg" alt="Vingadores"></div>
+      <div class="filme"><img src="https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg" alt="Mulher-Maravilha"></div>
+      <div class="filme"><img src="https://image.tmdb.org/t/p/w500/ugS5FVfCI3RV0ZwZtBV3HAV75OX.jpg" alt="Homem-Aranha"></div>
+      <div class="filme"><img src="https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg" alt="Avatar"></div>
+    </div>
+  </section>
+
+  <section class="compra" id="compra">
+    <h3>Combo Completo por Apenas R$30</h3>
+    <p>Assista quantas vezes quiser, sem limitações. Oferta válida por tempo limitado.</p>
+    <button>Comprar Agora</button>
+  </section>
+
+  <footer>
+    <p>© 2025 MovieCombo - Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
+
 </body>
 </html>
